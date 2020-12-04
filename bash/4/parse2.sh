@@ -37,15 +37,15 @@ do
       ECL=$(echo "$PASSPORT" | sed -e 's/.*ecl://' | sed -e 's/ .*//')
       PID=$(echo "$PASSPORT" | sed -e 's/.*pid://' | sed -e 's/ .*//')
       # Check BYR IYR and EYR
-      if ! echo "$BYR" | grep -Eq '^[0-9]{4}'
+      if ! echo "$BYR" | grep -Eq '^[0-9]{4}$'
       then
         PASSPORT=""
         continue
-      elif ! echo "$IYR" | grep -Eq '^[0-9]{4}'
+      elif ! echo "$IYR" | grep -Eq '^[0-9]{4}$'
       then
         PASSPORT=""
         continue
-      elif ! echo "$EYR" | grep -Eq '^[0-9]{4}'
+      elif ! echo "$EYR" | grep -Eq '^[0-9]{4}$'
       then
         PASSPORT=""
         continue
